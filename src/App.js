@@ -1,10 +1,10 @@
 import React from "react";
-import Counter from "./components/Quote";
+import QuoteBox from "./components/QuoteBox";
 
 const App = () => {
   return (
     <div>
-      <Counter />
+      <QuoteBox />
     </div>
   );
 };
