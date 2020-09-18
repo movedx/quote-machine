@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getRandomQuote,
@@ -7,6 +7,9 @@ import {
 } from "../redux/modules/quoteSlice";
 
 const QuoteBox = () => {
+  useEffect(() => {
+    dispatch(getRandomQuote());
+  }, []);
   const quote = useSelector(selectQuote);
   const author = useSelector(selectAuthor);
   const dispatch = useDispatch();
@@ -25,10 +28,3 @@ const QuoteBox = () => {
 };
 
 export default QuoteBox;
-
-// <div id="quote-box">
-//   <p>
-//     {quote} <br /> {author}
-//   </p>
-//   <button onClick={() => dispatch(getRandomQuote())}>Get New Quote</button>
-// </div>;
