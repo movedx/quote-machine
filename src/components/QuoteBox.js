@@ -20,7 +20,14 @@ const QuoteBox = () => {
       <div id="new-quote">
         <button onClick={() => dispatch(getRandomQuote())}>New Quote</button>
       </div>
-      <a href="#" id="tweet-quote">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          quote + " - " + author
+        )}`}
+        id="tweet-quote"
+      >
         Tweet quote
       </a>
     </div>
