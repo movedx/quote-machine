@@ -7,12 +7,13 @@ import {
 } from "../redux/modules/quoteSlice";
 
 const QuoteBox = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRandomQuote());
-  }, []);
+  }, [dispatch]);
   const quote = useSelector(selectQuote);
   const author = useSelector(selectAuthor);
-  const dispatch = useDispatch();
+
   return (
     <div
       id="quote-box"
