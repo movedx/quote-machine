@@ -35,7 +35,7 @@ const QuoteBox = () => {
         }}
       >
         <div>
-          <h6 id="author">{author}</h6>
+          <h5 id="author">{author}</h5>
         </div>
         <div>
           <p
@@ -43,6 +43,7 @@ const QuoteBox = () => {
             style={{
               minHeight: "130px",
               padding: "1rem 0rem 1rem 0rem",
+              fontStyle: "italic",
             }}
           >
             {quote}
@@ -71,7 +72,7 @@ const QuoteBox = () => {
               fontSize: "12px",
               outline: "0px",
               boxShadow:
-                "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
+                "0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
             }}
           >
             New Quote
