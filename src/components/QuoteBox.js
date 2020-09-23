@@ -16,37 +16,81 @@ const QuoteBox = () => {
 
   return (
     <div
-      id="quote-box"
-      className="card"
-      style={{ width: "18rem", margin: "auto", marginTop: "100px" }}
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        padding: "2rem",
+      }}
     >
-      <div className="card-body">
-        <h6 id="author" className="card-subtitle mb-2 text-muted">
-          {author}
-        </h6>
-        <p id="text" className="card-text">
-          {quote}
-        </p>
-        <button
-          id="new-quote"
-          type="button"
-          className="btn btn-outline-dark card-link"
-          onClick={() => dispatch(getRandomQuote())}
+      <div
+        id="quote-box"
+        style={{
+          width: "400px",
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderColor: "#e7e7e7",
+          borderRadius: "10px",
+          padding: "1rem",
+        }}
+      >
+        <div>
+          <h6 id="author">{author}</h6>
+        </div>
+        <div>
+          <p
+            id="text"
+            style={{ minHeight: "130px", padding: "1rem 0rem 1rem 0rem" }}
+          >
+            {quote}
+          </p>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
         >
-          New Quote
-        </button>
-        <a
-          className="btn btn-social-icon btn-twitter card-link"
-          id="tweet-quote"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-            quote + " - " + author
-          )}`}
-        >
-          <span class="fa fa-twitter"></span>
-        </a>
+          <button
+            id="new-quote"
+            type="button"
+            onClick={() => dispatch(getRandomQuote())}
+            style={{
+              backgroundColor: "white",
+              border: "1px solid #e7e7e7",
+              borderRadius: "10px",
+              color: "black",
+              padding: "15px 32px",
+              textAlign: "center",
+              textDecoration: "none",
+              display: "inline-block",
+              fontSize: "16px",
+              outline: "0px",
+              boxShadow:
+                "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
+            }}
+          >
+            New Quote
+          </button>
+        </div>
       </div>
+      <a
+        id="tweet-quote"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          quote + " - " + author
+        )}`}
+        style={{
+          margin: "1rem",
+          position: "absolute",
+          top: "0px",
+          right: "0%",
+        }}
+      >
+        <span className="fa fa-twitter"></span>
+      </a>
     </div>
   );
 };
