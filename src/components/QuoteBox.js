@@ -15,65 +15,22 @@ const QuoteBox = () => {
   const author = useSelector(selectAuthor);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        padding: "2rem",
-      }}
-    >
-      <div
-        id="quote-box"
-        style={{
-          width: "400px",
-          borderStyle: "solid",
-          borderWidth: "1px",
-          borderColor: "#e7e7e7",
-          borderRadius: "10px",
-          padding: "1rem",
-        }}
-      >
+    <div style={containerStyle}>
+      <div id="quote-box" style={boxStyle}>
         <div>
           <h5 id="author">{author}</h5>
         </div>
         <div>
-          <p
-            id="text"
-            style={{
-              minHeight: "130px",
-              padding: "1rem 0rem 1rem 0rem",
-              fontStyle: "italic",
-            }}
-          >
+          <p id="text" style={textStyle}>
             {quote}
           </p>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
+        <div style={buttonContainerStyle}>
           <button
             id="new-quote"
             type="button"
             onClick={() => dispatch(getRandomQuote())}
-            style={{
-              backgroundColor: "white",
-              border: "1px solid #e7e7e7",
-              borderRadius: "10px",
-              color: "black",
-              padding: "15px 32px",
-              textAlign: "center",
-              textDecoration: "none",
-              display: "inline-block",
-              fontSize: "12px",
-              outline: "0px",
-              boxShadow:
-                "0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
-            }}
+            style={buttonStyle}
           >
             New Quote
           </button>
@@ -86,12 +43,7 @@ const QuoteBox = () => {
         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
           quote + " - " + author
         )}`}
-        style={{
-          margin: "1rem",
-          position: "absolute",
-          top: "0px",
-          right: "0%",
-        }}
+        style={twitterRefStyle}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +57,55 @@ const QuoteBox = () => {
       </a>
     </div>
   );
+};
+
+const containerStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  padding: "2rem",
+};
+
+const boxStyle = {
+  width: "400px",
+  borderStyle: "solid",
+  borderWidth: "1px",
+  borderColor: "#e7e7e7",
+  borderRadius: "10px",
+  padding: "1rem",
+};
+
+const textStyle = {
+  minHeight: "130px",
+  padding: "1rem 0rem 1rem 0rem",
+  fontStyle: "italic",
+};
+
+const buttonContainerStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+};
+
+const buttonStyle = {
+  backgroundColor: "white",
+  border: "1px solid #e7e7e7",
+  borderRadius: "10px",
+  color: "black",
+  padding: "15px 32px",
+  textAlign: "center",
+  textDecoration: "none",
+  display: "inline-block",
+  fontSize: "12px",
+  outline: "0px",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
+};
+
+const twitterRefStyle = {
+  margin: "1rem",
+  position: "absolute",
+  top: "0px",
+  right: "0%",
 };
 
 export default QuoteBox;
