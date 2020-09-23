@@ -40,7 +40,10 @@ const QuoteBox = () => {
         <div>
           <p
             id="text"
-            style={{ minHeight: "130px", padding: "1rem 0rem 1rem 0rem" }}
+            style={{
+              minHeight: "130px",
+              padding: "1rem 0rem 1rem 0rem",
+            }}
           >
             {quote}
           </p>
@@ -65,7 +68,7 @@ const QuoteBox = () => {
               textAlign: "center",
               textDecoration: "none",
               display: "inline-block",
-              fontSize: "16px",
+              fontSize: "12px",
               outline: "0px",
               boxShadow:
                 "0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",
